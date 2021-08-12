@@ -1,0 +1,9 @@
+.ColorBox {
+	width: 20%;
+	height: 17%;
+	margin: 0.3rem;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

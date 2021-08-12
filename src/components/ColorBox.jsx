@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./ColorBox.css";
 
 export default class ColorBox extends Component {
 	constructor(props) {
@@ -8,8 +9,8 @@ export default class ColorBox extends Component {
 	render() {
 		const { name, color } = this.props;
 		return (
-			<div className="ColorBox">
-				<div style={{ backgroundColor: color }}>{name}</div>
+			<div className="ColorBox" style={{ backgroundColor: color }}>
+				{name}
 			</div>
 		);
 	}
