@@ -1,7 +1,7 @@
-.Palette-color-boxes {
+.Palette {
 	height: 100vh;
-	display: flex;
-	flex-wrap: wrap;
-	align-content: center;
-	justify-content: center;
+}
+
+.Palette-color-boxes {
+	height: 90%;
 }

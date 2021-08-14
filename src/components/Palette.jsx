@@ -13,7 +13,6 @@ export default class Palette extends Component {
 		));
 		return (
 			<div className="Palette">
-				<h1>Palette</h1>
 				<div className="Palette-color-boxes">{colorBoxs}</div>
 			</div>
 		);

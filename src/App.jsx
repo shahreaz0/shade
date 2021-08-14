@@ -4,8 +4,7 @@ import colorPalettes from "./utils/seedColors";
 function App() {
   return (
     <div className="App">
-      <h1>Home</h1>
-      <Palette colorPalette={colorPalettes[0]} />
+      <Palette colorPalette={colorPalettes[1]} />
     </div>
   );
 }
