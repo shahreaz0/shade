@@ -5,3 +5,22 @@
 .Palette-color-boxes {
 	height: 90%;
 }
+
+.slider {
+	margin: 1rem 0.5rem;
+	width: 35%;
+}
+
+.rc-slider-track {
+	display: none;
+}
+
+.rc-slider-rail {
+	height: 8px;
+}
+
+.rc-slider-handle {
+	margin-top: -4.8px;
+	width: 18px;
+	height: 18px;
+}
