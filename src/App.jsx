@@ -4,10 +4,9 @@ import colorPalettes from "./utils/seedColors";
 import generateNewPalette from "./utils/generateColorShade.js";
 
 function App() {
-  console.log(generateNewPalette(colorPalettes[1]));
   return (
     <div className="App">
-      <Palette colorPalette={colorPalettes[1]} />
+      <Palette colorPalette={generateNewPalette(colorPalettes[1])} />
     </div>
   );
 }
