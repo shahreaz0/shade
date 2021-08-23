@@ -1,0 +1,41 @@
+.Navbar {
+	display: flex;
+	align-items: center;
+	height: 3.125rem;
+}
+
+.logo {
+	height: 100%;
+	padding: 0 1rem;
+	font-size: 2rem;
+	font-weight: 500;
+	background-color: #eeeeee;
+	display: flex;
+	align-items: center;
+	color: #666;
+}
+
+.level-text {
+	width: 6rem;
+}
+
+.slider {
+	margin: 0 1rem;
+	width: 35%;
+	display: flex;
+	align-items: center;
+}
+
+.rc-slider-track {
+	display: none;
+}
+
+.rc-slider-rail {
+	height: 8px;
+}
+
+.rc-slider-handle {
+	margin-top: -4.8px;
+	width: 18px;
+	height: 18px;
+}
