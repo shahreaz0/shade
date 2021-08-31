@@ -1,7 +1,17 @@
 .Palette {
-	height: 100vh;
+	height: 90vh;
 }
 
 .Palette-color-boxes {
 	height: 90%;
+}
+
+.Palette-footer {
+	height: 10vh;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 1rem;
+	font-size: 1.2rem;
+	font-weight: 500;
 }
