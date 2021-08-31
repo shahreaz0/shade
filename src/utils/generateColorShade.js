@@ -22,7 +22,7 @@ const generateNewPalette = (starterPallete) => {
 				id: color.name.toLowerCase().replace(/ /g, "-"),
 				hex: hex,
 				rgb: chroma(hex).css(),
-				rgba: chroma(hex).alpha(0.9999).css(),
+				hsl: chroma(hex).css("hsl"),
 			});
 		});
 	});

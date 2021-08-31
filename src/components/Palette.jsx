@@ -8,6 +8,7 @@ export default class Palette extends Component {
 		super(props);
 		this.state = {
 			level: 500,
+			colorFormat: "hex",
 		};
 	}
 
@@ -15,15 +16,29 @@ export default class Palette extends Component {
 		this.setState({ level });
 	};
 
+	handleColorFormat = (color) => {
+		this.setState({
+			colorFormat: color,
+		});
+	};
+
 	render() {
-		const { level } = this.state;
+		const { level, colorFormat } = this.state;
 		const { colorPalette } = this.props;
 		const colorBoxs = colorPalette.colors[level].map((colorProps) => (
-			<ColorBox {...colorProps} key={colorProps.id} />
+			<ColorBox
+				colorName={colorProps.name}
+				colorFormat={colorProps[colorFormat]}
+				key={colorProps.id}
+			/>
 		));
 		return (
 			<div className="Palette">
-				<Navbar level={level} handleSlider={this.handleSlider} />
+				<Navbar
+					level={level}
+					handleSlider={this.handleSlider}
+					handleColorFormat={this.handleColorFormat}
+				/>
 				<div className="Palette-color-boxes">{colorBoxs}</div>
 			</div>
 		);
