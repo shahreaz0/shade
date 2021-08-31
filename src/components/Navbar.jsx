@@ -1,12 +1,17 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
+// rc-slider
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+// meterial ui
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
+// custom css
 import "./Navbar.css";
 
 class Navbar extends Component {
@@ -37,7 +42,12 @@ class Navbar extends Component {
 		const { colorFormat, open } = this.state;
 		return (
 			<header className="Navbar">
-				<div className="logo">SHADE</div>
+				<div className="logo">
+					<Link to="/" className="logo-text">
+						SHADE
+					</Link>
+				</div>
+
 				<div className="slider">
 					<span className="level-text">Level: {level}</span>
 					<Slider

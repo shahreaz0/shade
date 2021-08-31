@@ -1,24 +1,37 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Palette from "./components/Palette";
+import { Switch, Route, Link } from "react-router-dom";
 import colorPalettes from "./utils/seedColors";
 import generateNewPalette from "./utils/generateColorShade.js";
 
+// components
+import Palette from "./components/Palette";
+import PaletteList from "./components/PaletteList";
+
 function App() {
+  const findPalette = (id) => {
+    return colorPalettes.find((palette) => palette.id === id);
+  };
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route exact path="/">
-            <h1>Hello</h1>
-          </Route>
-          <Route exact path="/palette/:id">
-            <h1>single route</h1>
-          </Route>
-        </Switch>
-        {/*<Palette colorPalette={generateNewPalette(colorPalettes[1])} />*/}
-      </div>
-    </Router>
+    <div className="App">
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => <PaletteList palettes={colorPalettes} />}
+        />
+        <Route
+          exact
+          path="/palette/:id"
+          render={(routeProps) => (
+            <Palette
+              colorPalette={generateNewPalette(
+                findPalette(routeProps.match.params.id)
+              )}
+            />
+          )}
+        />
+      </Switch>
+    </div>
   );
 }
 
