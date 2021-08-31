@@ -66,7 +66,7 @@ class Navbar extends Component {
 					open={open}
 					onClose={this.handleClose}
 					autoHideDuration={4000}
-					message={`Color format changed to ${colorFormat}`}
+					message={`Color format changed to ${colorFormat.toUpperCase()}`}
 					action={
 						<React.Fragment>
 							<IconButton
