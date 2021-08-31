@@ -3,6 +3,10 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import Button from "@material-ui/core/Button";
+import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 import "./Navbar.css";
 
 class Navbar extends Component {
@@ -10,20 +14,27 @@ class Navbar extends Component {
 		super(props);
 		this.state = {
 			colorFormat: "hex",
+			open: false,
 		};
 	}
 
 	handleColorFormat = (event) => {
-		console.log(event.target.value);
 		this.setState({
 			colorFormat: event.target.value,
+			open: true,
 		});
 		this.props.handleColorFormat(event.target.value);
 	};
 
+	handleClose = () => {
+		this.setState({
+			open: false,
+		});
+	};
+
 	render() {
 		const { level, handleSlider } = this.props;
-		const { colorFormat } = this.state;
+		const { colorFormat, open } = this.state;
 		return (
 			<header className="Navbar">
 				<div className="logo">SHADE</div>
@@ -37,7 +48,7 @@ class Navbar extends Component {
 						onChange={handleSlider}
 					/>
 				</div>
-				<div>
+				<div className="select-color-format">
 					<Select
 						value={colorFormat}
 						onChange={this.handleColorFormat}
@@ -47,6 +58,28 @@ class Navbar extends Component {
 						<MenuItem value="hsl">HSL</MenuItem>
 					</Select>
 				</div>
+				<Snackbar
+					anchorOrigin={{
+						vertical: "bottom",
+						horizontal: "left",
+					}}
+					open={open}
+					onClose={this.handleClose}
+					autoHideDuration={4000}
+					message={`Color format changed to ${colorFormat}`}
+					action={
+						<React.Fragment>
+							<IconButton
+								size="small"
+								aria-label="close"
+								color="inherit"
+								onClick={this.handleClose}
+							>
+								<CloseIcon fontSize="small" />
+							</IconButton>
+						</React.Fragment>
+					}
+				/>
 			</header>
 		);
 	}
