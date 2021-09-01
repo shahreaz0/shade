@@ -8,13 +8,12 @@ const PaletteList = (props) => {
 	const { palettes } = props;
 
 	const palettesLinks = palettes.map((palette, key) => (
-		<p key={key}>
-			<Link to={`/palette/${palette.id}`}>{palette.paletteName}</Link>
-		</p>
+		<Link key={key} to={`/palette/${palette.id}`}>
+			<MiniPalette {...palette} />
+		</Link>
 	));
 	return (
 		<div>
-			<MiniPalette />
 			<h1>Palette</h1>
 			{palettesLinks}
 		</div>
