@@ -4,7 +4,6 @@ import { withStyles } from "@material-ui/core/styles";
 const styles = {
 	root: {
 		backgroundColor: "white",
-		margin: ".5rem",
 		padding: ".5rem",
 		border: "1px solid black",
 		cursor: "pointer",
