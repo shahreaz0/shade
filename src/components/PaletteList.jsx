@@ -7,9 +7,9 @@ import MiniPalette from "./MiniPalette";
 
 const styles = {
 	root: {
-		backgroundColor: "#eee",
-		display: "flex",
-		justifyContent: "center",
+		background:
+			"url('https://res.cloudinary.com/dlfozpwa2/image/upload/c_scale,h_700,q_auto/v1633536807/shade/shade_bg_olnc0v.png')",
+		height: "95vh",
 	},
 	navbar: {
 		display: "flex",
@@ -18,17 +18,25 @@ const styles = {
 		margin: "1rem 0",
 	},
 	container: {
-		width: "50%",
-		display: "flex",
-		flexWrap: "wrap",
+		width: "60%",
+		margin: "auto",
 	},
 	miniPalettes: {
 		width: "100%",
-		border: "1px solid black",
 		display: "grid",
+		gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+		gridGap: "1.5rem",
 	},
 	link: {
 		textDecoration: "none",
+	},
+
+	title: {
+		fontFamily: "Barlow Semi Condensed,sans-serif",
+		textTransform: "uppercase",
+		letterSpacing: "2px",
+		color: "#555",
+		fontWeight: "500",
 	},
 };
 
@@ -44,7 +52,7 @@ const PaletteList = (props) => {
 		<div className={classes.root}>
 			<div className={classes.container}>
 				<nav className={classes.navbar}>
-					<h1>Palette</h1>
+					<h1 className={classes.title}>PALETTE</h1>
 				</nav>
 				<div className={classes.miniPalettes}>{miniPalettes}</div>
 			</div>
